@@ -2,15 +2,16 @@ button {
   all: unset;
   font-weight: 500;
   color: var(--text-highlight);
-  padding: .75rem 1.5rem;
-  border-radius: .5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 
   &.btn-primary {
     color: white;
     background-color: var(--brand-dark);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: var(--brand-mid);
     }
   }
@@ -19,9 +20,10 @@ button {
     margin-left: auto;
     border: 1px solid var(--text-highlight);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: var(--brand-dark);
-      outline: .25rem solid var(--surface-secondary);
+      outline: 0.25rem solid var(--surface-secondary);
     }
   }
 }
