@@ -24,4 +24,8 @@ fieldset + fieldset {
   margin-top: 3rem;
   display: flex;
   gap: 1rem;
+
+  @media (width <= 25rem) {
+    flex-direction: column;
+  }
 }

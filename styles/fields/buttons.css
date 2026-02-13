@@ -25,5 +25,9 @@ button {
       color: var(--brand-dark);
       outline: 0.25rem solid var(--surface-secondary);
     }
+
+    @media (width <= 25rem) {
+      margin: 0;
+    }
   }
 }

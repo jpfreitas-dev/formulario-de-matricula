@@ -33,10 +33,13 @@
 }
 
 body {
-  overflow: hidden;
-
+  overflow: auto;
   font: var(--text);
   color: var(--text-secondary);
+
+  @media (width >= 56.25rem) {
+    overflow: hidden;
+  }
 }
 
 h1,

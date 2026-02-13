@@ -31,6 +31,7 @@ input[type="date"]:focus-within {
 
 input[type="date"] {
   position: relative;
+  cursor: pointer;
 
   &::-webkit-calendar-picker-indicator {
     opacity: 0;
@@ -50,12 +51,16 @@ input[type="date"] {
 }
 
 select {
-  background: url(../../assets/icons/arrow-down-01.svg) no-repeat
-    calc(100% - 1rem);
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+  cursor: pointer;
 }
 
 .address .flex {
   gap: 1.25rem;
+
+  @media (width <= 31.25rem){
+    flex-direction: column;
+  }
 }
 
 .input-wrapper:has([disabled]) {
@@ -69,27 +74,30 @@ input {
     color: var(--text-primary);
   }
 
-  &:user-invalid {
-    border: 0.125rem solid var(--semantic-error);
-  }
-
-  & + small {
+  &+small {
     font: var(--text-sm);
     color: #78716c;
     display: inline-block;
     margin-top: 0.25rem;
   }
 
-  &[required] + .error {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font: var(--text-sm);
-    color: var(--semantic-error);
-    margin-top: 0.25rem;
+  &[required]+.error {
+    display: none;
   }
 
-  &:not(:focus):valid + .error {
-    display: none;
+  &:user-invalid {
+    border: 0.125rem solid var(--semantic-error);
+
+    &+.error {
+      display: flex;
+      gap: 0.25rem;
+      font: var(--text-sm);
+      color: var(--semantic-error);
+      margin-top: 0.25rem;
+
+      & span {
+        margin-top: .125rem;
+      }
+    }
   }
 }
